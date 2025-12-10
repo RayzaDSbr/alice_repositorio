@@ -23,9 +23,9 @@
     <button onclick="listar()">Listar</button>
     <!--Manu e Kitty
     <button onclick="aluno()">Aluno</button>-->
-    <!--Duda e Rayza
+    <!--Duda e Rayza-->
     <button onclick="media()">Média</button>
-    Manu e Kitty
+    <!--Manu e Kitty
     <button onclick="maior()">Notas maior que </button>-->
     <br>
     <div id="div_msg"> </div>
@@ -102,33 +102,20 @@
         if (resposta == 's') {
             div_msg.innerHTML = '';
 
-            for (let index = vet_cadastroAluno.length -1; index >= 0; index--) {
+            for (let index = vet_cadastroAluno.length - 1; index >= 0; index--) {
                 console.log(vet_cadastroAluno[index].nome);
                 div_msg.innerHTML += '<br> ' + vet_cadastroAluno[index].nome + ', ' + vet_cadastroAluno[index].nota1 + ', ' + vet_cadastroAluno[index].nota2 + ', ' + vet_cadastroAluno[index].nota3;
-                
+
             }
-        }
-    }
-
-    function aluno() {
-        aluno_desejado = prompt('Insira o nome do aluno cadastrado: ');
-
-        div_msg.innerHTML = '';
-
-        for (let index = 0; index < vet_nome.length; index++) {
-            if (aluno_desejado == vet_nome[index]) {
-                div_msg.innerHTML += '<br> Nome do aluno: ' + vet_nome[index] + ' | Primeira Nota: ' + vet_nota1[index] + ' | Segunda Nota: ' + vet_nota2[index] + ' | Terceira Nota: ' + vet_nota3[index];
-            }
-
         }
     }
 
     function media() {
         var media = 0;
 
-        for (let index = 0; index < vet_nome.length; index++) {
-            media = (nota1[index] + nota2[index] + nota3[index]) / 3;
-
+        for (let index = 0; index < vet_cadastroAluno.length; index++) {
+            media = (vet_cadastroAluno[index].nota1 + vet_cadastroAluno[index].nota2 + vet_cadastroAluno[index].nota3 / 3);
+            div_msg.innerHTML += '<br> Média do aluno: ' + vet_cadastroAluno[index].nome + ' ' + media[index];
         }
     }
 </script>
