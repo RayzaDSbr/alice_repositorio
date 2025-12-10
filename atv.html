@@ -22,12 +22,22 @@
     <br> <br>
     <button onclick="cadastrar()">Cadastrar</button>
 
+<<<<<<< Updated upstream
     <button onclick="listar()">Listar</button>
 
     <button onclick="aluno()">Aluno</button>
 
     <button onclick="media()">Média</button>
 
+=======
+    <!--Duda e Rayza-->
+  <!-- <button onclick="listar()">Listar</button>-->
+    <!--Manu e Kitty-->
+    <button onclick="aluno()">Aluno</button>
+    <!--Duda e Rayza-->
+   <!-- <button onclick="media()">Média</button> -->
+    <!--Manu e Kitty-->
+>>>>>>> Stashed changes
     <button onclick="maior()">Notas maior que </button>
     <br>
     <div id="div_msg"> </div>
@@ -95,17 +105,19 @@
             }
         }
     }
-
+//Manu e Kitty
     function aluno() {
         aluno_desejado = prompt('Insira o nome do aluno cadastrado: ');
 
-        div_msg.innerHTML = '';
+        
+        for (let index = 0; index < vet_cadastroAluno.length; index++) {
+            var pessoa = vet_cadastroAluno[index]
+            if (aluno_desejado == pessoa.nome) {
+                div_msg.innerHTML += '<br> Nome do aluno: ' + pessoa.nome + ' <br> | Primeira Nota: ' + vet_cadastroAluno[index].nota1 + ' | Segunda Nota: ' + vet_cadastroAluno[index].nota2 + ' | Terceira Nota: ' + vet_cadastroAluno[index].nota3;
 
-        for (let index = 0; index < vet_nome.length; index++) {
-            if (aluno_desejado == vet_nome[index]) {
-                div_msg.innerHTML += '<br> Nome do aluno: ' + vet_nome[index] + ' | Primeira Nota: ' + vet_nota1[index] + ' | Segunda Nota: ' + vet_nota2[index] + ' | Terceira Nota: ' + vet_nota3[index];
+                console.log('funfando...')
             }
-
+            
         }
     }
 
