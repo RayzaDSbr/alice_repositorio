@@ -83,12 +83,17 @@
 
     // Rayza e Duda
     function listar() {
+
+        console.log(vet_cadastroAluno[0].nome);
         resposta = prompt('A lista sera organizada do ultimo para o primeiro? (s ou n)');
 
         if (resposta == 'n') {
             div_msg.innerHTML = '';
 
-            div_msg.innerHTML += aluno[0];
+            for (let index = 0; index < vet_cadastroAluno.length; index++) {
+                div_msg.innerHTML += '<br> ' + vet_cadastroAluno[index].nome + ', ' + vet_cadastroAluno[index].nota1 + ', ' + vet_cadastroAluno[index].nota2 + ', ' + vet_cadastroAluno[index].nota3;
+            }
+
 
             /*for (let index = 0; index < vet_nome.length; index++) {
                 div_msg.innerHTML += '<br> Nome do aluno: ' + vet_nome[index] + ' | Primeira Nota: ' + vet_nota1[index] + ' | Segunda Nota: ' + vet_nota2[index] + ' | Terceira Nota: ' + vet_nota3[index];
@@ -97,8 +102,10 @@
         if (resposta == 's') {
             div_msg.innerHTML = '';
 
-            for (let index = vet_cadastroAluno.length; index > 0; index--) {
-                div_msg.innerHTML += '<br> Nome do aluno: ' + vet_cadastroAluno[index];
+            for (let index = vet_cadastroAluno.length -1; index >= 0; index--) {
+                console.log(vet_cadastroAluno[index].nome);
+                div_msg.innerHTML += '<br> ' + vet_cadastroAluno[index].nome + ', ' + vet_cadastroAluno[index].nota1 + ', ' + vet_cadastroAluno[index].nota2 + ', ' + vet_cadastroAluno[index].nota3;
+                
             }
         }
     }
